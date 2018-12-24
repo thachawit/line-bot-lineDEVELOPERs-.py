@@ -144,17 +144,17 @@ def handle_text_message(event):
         template_message = TemplateSendMessage(
             alt_text='Confirm alt text', template=confirm_template)
         line_bot_api.reply_message(event.reply_token, template_message)
-    elif text == 'buttons':
-        buttons_template = ButtonsTemplate(
-            title='My buttons sample', text='Hello, my buttons', actions=[
-                URIAction(label='Go to line.me', uri='https://line.me'),
-                PostbackAction(label='ping', data='ping'),
-                PostbackAction(label='ping with text', data='ping', text='ping'),
-                MessageAction(label='Translate Rice', text='米')
+    elif text == 'songs':
+        songs_template = songsTemplate(
+            title='My songs sample', text='Hello, my songs', actions=[
+                URIAction(label='=ชีวิตเธอดีอยู่แล้ว', uri='https://www.youtube.com/watch?v=rMrTHasf4uk'),
+                URIAction(label='country roads', uri='https://www.youtube.com/watch?v=1vrEljMfXYo'),
+                URIAction(label='KO DO MO', uri='https://www.youtube.com/watch?v=sEQoXjl_Yck&start_radio=1&list=RDsEQoXjl_Yck'),
+                URIAction(label='คุ้กกี้ ver. nobuna', uri='https://www.youtube.com/watch?v=6gO7DZFzl5c&list=RDsEQoXjl_Yck&index=2')
             ])
         template_message = TemplateSendMessage(
-            alt_text='Buttons alt text', template=buttons_template)
-        line_bot_api.reply_message(event.reply_token, template_message)
+            alt_text='songs alt text', template=songs_template)
+        line_bot_api.reply_message(event.reply_token, template_message)          
     elif text == 'carousel':
         carousel_template = CarouselTemplate(columns=[
             CarouselColumn(text='hoge1', title='fuga1', actions=[
