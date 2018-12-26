@@ -86,7 +86,7 @@ def handle_text_message(event):
          if isinstance(event.source, SourceUser):
             line_bot_api.reply_message(
                 event.reply_token, [
-                    TextSendMessage(text='Display name: ' + profile.display_name),
+                    TextSendMessage(text='hello shield'),
            ])
 if __name__ == "__main__":
     arg_parser = ArgumentParser(
