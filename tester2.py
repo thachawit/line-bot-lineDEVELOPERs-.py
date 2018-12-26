@@ -81,7 +81,8 @@ def callback():
 def handle_text_message(event):
     text = event.message.text    
 
-    if text == 'buttons':
+   if text == 'profile':
+        if isinstance(event.source, SourceUser):
         text_message = TextSendMessage(text='Hello, world',
                                quick_reply=QuickReply(items=[
                                    QuickReplyButton(action=MessageAction(label="label", text="text"))
