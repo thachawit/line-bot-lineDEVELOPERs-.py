@@ -81,12 +81,13 @@ def callback():
 def handle_text_message(event):
     text = event.message.text    
 
-if text == 'profile':
-    if isinstance(event.source, SourceUser):
-       text_message = TextSendMessage(text='Hello, world',
-                               quick_reply=QuickReply(items=[
-                                   QuickReplyButton(action=MessageAction(label="label", text="text"))
-                               ]))
+
+    if text == 'profile':
+        if isinstance(event.source, SourceUser):
+            line_bot_api.reply_message(
+                event.reply_token, [
+                    TextSendMessage(text='Display name: ' + profile.display_name),
+           ])
 if __name__ == "__main__":
     arg_parser = ArgumentParser(
         usage='Usage: python ' + __file__ + ' [--port <port>] [--help]'
