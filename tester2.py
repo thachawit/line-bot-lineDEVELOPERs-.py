@@ -87,7 +87,7 @@ def handle_text_message(event):
                 URIAction(label='Go to line.me', uri='https://line.me'),
                 PostbackAction(label='ping', data='ping'),
                 PostbackAction(label='ping with text', data='ping', text='ping'),
-                MessageAction(label='Translate Rice', text='米')
+             
             ])
         template_message = TemplateSendMessage(
             alt_text='Buttons alt text', template=buttons_template)
