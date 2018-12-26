@@ -106,4 +106,4 @@ if __name__ == "__main__":
     make_static_tmp_dir()
 
     app.run(debug=options.debug, port=options.port)        
-        line_bot_api.reply_message(event.reply_token, template_message)
+        
