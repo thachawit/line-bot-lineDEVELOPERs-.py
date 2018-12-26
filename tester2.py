@@ -82,8 +82,8 @@ def handle_text_message(event):
     text = event.message.text    
 
 
-    if text == 'profile':
-        if isinstance(event.source, SourceUser):
+     if text == 'profile':
+         if isinstance(event.source, SourceUser):
             line_bot_api.reply_message(
                 event.reply_token, [
                     TextSendMessage(text='Display name: ' + profile.display_name),
