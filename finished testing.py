@@ -167,10 +167,7 @@ def handle_text_message(event):
 เราไม่เคยรักกัน
 ฉันนั้นคิดไปเอง ''')
          ])
-    elif text == 'แก้ม':
-     if isinstance(event.source, SourceGroup):
-      line_bot_api.reply_message(
-       event.reply_token, TextSendMessage(text='หมู'))
+    
 
 
 
